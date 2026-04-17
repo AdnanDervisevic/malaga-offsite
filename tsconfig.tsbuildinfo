@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./tests/scenarios/cucumber.config.ts","./tests/scenarios/steps/smoke.steps.ts"],"version":"5.9.3"}
