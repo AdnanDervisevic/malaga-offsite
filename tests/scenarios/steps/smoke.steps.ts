@@ -36,6 +36,7 @@ Before(async () => {
     viteProcess = spawn('npm', ['run', 'dev', '--', '--host', '127.0.0.1'], {
       stdio: 'ignore',
       detached: false,
+      shell: true,
     });
     await waitForServer(APP_URL);
   }

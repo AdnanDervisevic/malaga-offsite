@@ -11,9 +11,10 @@
     "typecheck": "tsc -b --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test:bdd": "NODE_OPTIONS='--import tsx/esm' cucumber-js 'tests/scenarios/features/**/*.feature' --import 'tests/scenarios/steps/**/*.ts'"
+    "test:bdd": "cross-env NODE_OPTIONS=\"--import tsx/esm\" cucumber-js \"tests/scenarios/features/**/*.feature\" --import \"tests/scenarios/steps/**/*.ts\""
   },
   "dependencies": {
+    "cross-env": "^10.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
