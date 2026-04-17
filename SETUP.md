@@ -133,23 +133,61 @@ Follow the prompts. Type `/exit` to leave.
 
 ---
 
-## Everyone — clone the repo and install
+## Everyone — download the repo
 
-Pick a folder you want the workshop to live in (Desktop is fine). In your terminal / PowerShell:
+"The repo" is a folder of code that lives on GitHub. We will copy it onto your laptop using a command called `git clone`. You do not need a GitHub account for this — the repo is public.
+
+**What `git clone` does:** downloads a copy of the project into a new folder on your machine. From then on, that folder is yours to edit.
+
+### Pick where it lives
+
+Use your Desktop to keep it simple. In your terminal:
+
+- **macOS:**
+  ```bash
+  cd ~/Desktop
+  ```
+- **Windows PowerShell:**
+  ```powershell
+  cd $HOME\Desktop
+  ```
+
+`cd` means "change directory". You are now "inside" your Desktop folder for the purposes of the terminal.
+
+### Clone it
 
 ```bash
-cd Desktop
 git clone https://github.com/AdnanDervisevic/malaga-offsite.git
+```
+
+You should see a few lines ending with something like `Resolving deltas: 100%`. A new folder called `malaga-offsite` now exists on your Desktop.
+
+> **If `git` asks for a username or password:** the repo is public, so just press Enter twice to skip, or hit Ctrl+C and re-run the command. You do not need credentials.
+>
+> **If you see `Permission denied (publickey)`:** you accidentally used the SSH URL. Use the `https://` one above.
+
+### Move into the folder and install
+
+```bash
 cd malaga-offsite
 npm install
 ```
 
-> Windows: if you see "running scripts is disabled" run this once, then retry:
+`cd malaga-offsite` steps into the folder. `npm install` downloads all the libraries the project uses. Takes 1–2 minutes, should end with no red "ERR" lines.
+
+> Windows: if you see "running scripts is disabled" run this once, then retry `npm install`:
 > ```powershell
 > Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 > ```
 
-`npm install` takes 1–2 minutes and should end with no red "ERR" lines.
+### Coming back to it later
+
+Every time you open a new terminal, you are "outside" the project folder. To get back in:
+
+- **macOS:** `cd ~/Desktop/malaga-offsite`
+- **Windows:** `cd $HOME\Desktop\malaga-offsite`
+
+All the other commands below (`npm run dev`, `claude`, etc.) must be run **from inside** that folder.
 
 ## Install the Playwright browser
 
