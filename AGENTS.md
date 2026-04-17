@@ -36,6 +36,17 @@ shared/  → zod schemas and inferred types (only create if both sides import fr
 - **No secrets in the frontend bundle.** Anything imported under `src/` ends up in the browser. Put keys in `.env` and read them server-side only.
 - **No abstractions you don't need.** No repositories, no services layer, no DI containers, no custom Result type. Plain functions, plain data.
 
+## Style: functional-first JavaScript/TypeScript
+
+Beginner readers are in the room. Keep the code boring and readable.
+
+- Prefer pure functions over classes. No `this`, no inheritance.
+- Prefer `map` / `filter` / `reduce` over imperative `for` loops for data transforms.
+- Keep side effects at the edges (HTTP handlers, DB access, React event handlers). Inner helpers stay pure.
+- Do not mutate function arguments. Return a new value instead.
+- React: function components with hooks only — no class components.
+- Exception: when a library idiom demands a class (rare in this stack), follow the library.
+
 ## Naming
 
 - Routes: `server/routes/<resource>.ts`, exporting a Hono sub-app.

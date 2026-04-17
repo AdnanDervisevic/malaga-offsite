@@ -69,3 +69,4 @@ Agent chains accumulate significant context. Manage this proactively:
 - This repo is deliberately bare. Do not add extra tooling, folders, or abstractions unless the feature being built requires it.
 - Prefer simple implementations over clever ones. Participants have 2 hours — every abstraction costs them time.
 - The backend does not exist yet. When a feature needs a backend, set it up under `server/` using the stack named in `AGENTS.md`.
+- **Functional-first JS/TS.** Pure functions over classes, `map`/`filter`/`reduce` over `for` loops, no argument mutation, React function components only. See `AGENTS.md` for the full rule. Non-coders will be reading diffs — keep code boring.
