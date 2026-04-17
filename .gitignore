@@ -10,3 +10,4 @@ playwright-report
 test-results
 data.db
 data.db-journal
+*.tsbuildinfo
